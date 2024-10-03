@@ -14,8 +14,8 @@ import AWithContext from "./1.Context-Basic/A";
 import Homepage from "./2.Dark-ThemeV2/pages/HomePage/HomePage.layout";
 import ThemeContext from "./2.Dark-ThemeV2/context/ThemeContext";
 import ProfileContext from "./2.Dark-ThemeV2/context/profileContext";
-import StateHomePage from "./DropDownTask/pages/Home.Layout";
 import DropDownContext from "./DropDownTask/Context/DropdownContext";
+import HeaderComponent from "./DropDownTask/Components/organisms/Header/Header.Component";
 
 const router = createBrowserRouter([
   {
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/language",
-    element: <StateHomePage />,
+    element: <HeaderComponent />,
   },
 ]);
 createRoot(document.getElementById("root")).render(
