@@ -6,8 +6,8 @@ const StateProvider = stateContext.Provider;
 const DropDownContext = ({ children }) => {
   const [selectedOption, setSelectedOption] = useState("");
 
-  const handleSelectChange = (event) => {
-    setSelectedOption(event.target.value);
+  const handleSelectChange = (e) => {
+    setSelectedOption(e.target.value);
   };
 
   return (
