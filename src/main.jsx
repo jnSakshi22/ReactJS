@@ -1,8 +1,8 @@
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.Layout";
-import Contact from "./pages/Contact.Layout";
-import About from "./pages/About.Layout";
+// import Contact from "./pages/Contact.Layout";
+// import About from "./pages/About.Layout";
 import AmazonProductDetails from "./pages/AmazonProductDetails.Layout";
 import Profile from "./pages/Profile";
 import Increment from "./pages/Increment.Layout";
@@ -16,11 +16,18 @@ import ThemeContext from "./2.Dark-ThemeV2/context/ThemeContext";
 import ProfileContext from "./2.Dark-ThemeV2/context/profileContext";
 import DropDownContext from "./DropDownTask/Context/DropdownContext";
 import HeaderComponent from "./DropDownTask/Components/organisms/Header/Header.Component";
+// import HomePage from "./ToggleTheme/Pages/Home.Layout";
+import AboutPage from "./ToggleTheme/Pages/About.Layout";
+import ContactPage from "./ToggleTheme/Pages/Contact.Layout";
+import ToggleHeaderComponent from "./ToggleTheme/Components/Organisms/Header/ToggleHeader.Component";
+import ToggleThemeContext from "./ToggleTheme/Context/ThemeContext";
+import StopWatch from "./StopWatch/stopwatch";
+import OTPBox from "./OTPFocusBox/OTPFocusBox";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <StopWatch />,
   },
   {
     path: "/themev2",
@@ -40,11 +47,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/contact",
-    element: <Contact />,
+    element: <ContactPage />,
   },
   {
     path: "/about",
-    element: <About />,
+    element: <AboutPage />,
   },
 
   {
@@ -80,12 +87,22 @@ const router = createBrowserRouter([
     path: "/language",
     element: <HeaderComponent />,
   },
+  {
+    path: "/toggleTheme",
+    element: <ToggleHeaderComponent />,
+  },
+  {
+    path: "/OTPFocus",
+    element: <OTPBox />,
+  },
 ]);
 createRoot(document.getElementById("root")).render(
   <DropDownContext>
     <ProfileContext>
       <ThemeContext>
-        <RouterProvider router={router} />
+        <ToggleThemeContext>
+          <RouterProvider router={router} />
+        </ToggleThemeContext>
       </ThemeContext>
     </ProfileContext>
   </DropDownContext>
