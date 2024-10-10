@@ -23,6 +23,8 @@ import ToggleHeaderComponent from "./ToggleTheme/Components/Organisms/Header/Tog
 import ToggleThemeContext from "./ToggleTheme/Context/ThemeContext";
 import StopWatch from "./StopWatch/stopwatch";
 import OTPBox from "./OTPFocusBox/OTPFocusBox";
+import WithoutUseMemo from "./useMemo/WithoutUseMemoFiltered";
+import InputForm from "./InputFocuswithQueryParameter/InputFocus";
 
 const router = createBrowserRouter([
   {
@@ -94,6 +96,14 @@ const router = createBrowserRouter([
   {
     path: "/OTPFocus",
     element: <OTPBox />,
+  },
+  {
+    path: "/FilteredProducts",
+    element: <WithoutUseMemo />,
+  },
+  {
+    path: "/InputForm",
+    element: <InputForm />,
   },
 ]);
 createRoot(document.getElementById("root")).render(
