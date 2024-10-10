@@ -25,6 +25,7 @@ import StopWatch from "./StopWatch/stopwatch";
 import OTPBox from "./OTPFocusBox/OTPFocusBox";
 import WithoutUseMemo from "./useMemo/WithoutUseMemoFiltered";
 import InputForm from "./InputFocuswithQueryParameter/InputFocus";
+import DynamicInputForm from "./InputFocuswithQueryParameter/DynamicInputFocus";
 
 const router = createBrowserRouter([
   {
@@ -104,6 +105,10 @@ const router = createBrowserRouter([
   {
     path: "/InputForm",
     element: <InputForm />,
+  },
+  {
+    path: "/DynamicInputForm",
+    element: <DynamicInputForm />,
   },
 ]);
 createRoot(document.getElementById("root")).render(
